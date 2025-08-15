@@ -84,6 +84,27 @@
         from { opacity: 0; transform: scale(0.8); }
         to { opacity: 1; transform: scale(1); }
     }
+    /* Resume button styles */
+.resume-btn {
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 2px; /* slight right shift */
+    padding: 6px 14px;
+    font-size: 14px;
+    background-color: #00ff6a; /* hacker green */
+    color: #000; /* black text */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 8px #00ff6a55;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #00cc55; /* darker green */
+    box-shadow: 0 0 12px #00ff6a88;
+}
+
 </style>
 </head>
 <body>
@@ -91,13 +112,17 @@
 <header>
     <h1>Arushi Saxena</h1>
     <p>Cybersecurity Student | Developer | Explorer</p>
+    <!-- Moved button here -->
+    <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
 </header>
+
 
 <section class="section about" onclick="openModal('aboutModal')">
     <h2>About Me</h2>
     <p>Cybersecurity | Ethical hacking | Web development<br>more...
     </p>
 </section>
+
 
 <section class="section projects" onclick="openModal('projectsModal')">
     <h2>Projects</h2>
