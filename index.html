@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arushi Saxena - Portfolio</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0e1e12, #12351f);
+        color: #e0e0e0;
+    }
+    header {
+        text-align: center;
+        padding: 40px;
+    }
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #a8ffb2;
+        text-shadow: 0 0 10px #00ff6a33;
+    }
+    header p {
+        font-size: 1.2em;
+        color: #cfcfcf;
+    }
+    .section {
+        margin: 20px auto;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 900px;
+        box-shadow: 0 0 20px #00000044;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px #00ff6a55;
+    }
+    .about { background-color: #1c3d28; }
+    .projects { background-color: #2b314f; }
+    .contact { background-color: #4f2b2b; }
+    h2 { margin-top: 0; color: #f2f2f2; }
+    a { color: #9effa1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .project-link {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 6px 12px;
+        background-color: #1c3d28;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+    .project-link:hover { background-color: #00ff6a33; }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: #1e2a22;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 0 20px #00ff6a55;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    .close {
+        float: right;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #a8ffb2;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Arushi Saxena</h1>
+    <p>Cybersecurity Student | Developer | Explorer</p>
+</header>
+
+<section class="section about" onclick="openModal('aboutModal')">
+    <h2>About Me</h2>
+    <p>Cybersecurity | Ethical hacking | Web development<br>more...
+    </p>
+</section>
+
+<section class="section projects" onclick="openModal('projectsModal')">
+    <h2>Projects</h2>
+    <p>Click to see my featured projects.</p>
+</section>
+
+<section class="section contact" onclick="openModal('contactModal')">
+    <h2>Contact</h2>
+    <p>Contact information</p>
+</section>
+
+<!-- About Modal -->
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+        <h2>About Me</h2>
+        <p>Hello! I’m Arushi, a Cybersecurity undergrad, with a strong passion for ethical hacking, penetration testing, and creating tools that enhance cybersecurity practices. I enjoy building projects that solve real-world problems and exploring new technologies in the web and security domains.</p>
+    </div>
+</div>
+
+<!-- Projects Modal -->
+<div id="projectsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('projectsModal')">&times;</span>
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>Hash Cracker Tool</strong> – A Python-based tool for cracking hashed passwords using multiple algorithms and wordlists.  
+                <br>
+                <a class="project-link" href="https://github.com/arushi-saxena06/hash-cracker-tool" target="_blank">🔗 View GitHub Repo</a>
+            </li>
+            <br>
+            <li>
+                <strong>Advanced Port Scanner</strong> – A network scanning tool that detects open ports and services on target hosts.  
+                <br>
+                <a class="project-link" href="https://github.com/arushi-saxena06/Advanced-port-scanner" target="_blank">🔗 View GitHub Repo</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('contactModal')">&times;</span>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:arushisaxena@example.com">arushisaxena612@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/arushi-saxena-74b024324/" target="_blank">linkedin.com/in/arushisaxena</a></p>
+        <p>GitHub: <a href="https://github.com/arushi-saxena06" target="_blank">github.com/arushisaxena</a></p>
+    </div>
+</div>
+
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+window.onclick = function(event) {
+    document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
